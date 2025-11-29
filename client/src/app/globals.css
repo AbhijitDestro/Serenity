@@ -1,0 +1,550 @@
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
+    infinite;
+  @keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+}
+
+@keyframes ripple {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+:root,
+[data-theme="forest"] {
+  /* Calming light theme colors (HSL converted to Hex) */
+  --background: #fcfdfd;
+  --foreground: #383f42;
+
+  --card: #fcfdfd;
+  --card-foreground: #383f42;
+
+  --popover: #fcfdfd;
+  --popover-foreground: #383f42;
+
+  /* Soft sage green as primary */
+  --primary: #7ab899;
+  --primary-foreground: #183929;
+
+  /* Gentle lavender as secondary */
+  --secondary: #f3f3f7;
+  --secondary-foreground: #474554;
+
+  /* Muted tones */
+  --muted: #f3f5f7;
+  --muted-foreground: #607085;
+
+  /* Soft accent */
+  --accent: #eff5f5;
+  --accent-foreground: #383f42;
+
+  --destructive: #ef4343;
+  --destructive-foreground: #f9fafb;
+
+  --border: #e3e6e8;
+  --input: #e3e6e8;
+  --ring: #7ab899;
+
+  /* Sidebar Colors */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #3f3f46;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
+
+  --radius: 0.75rem;
+}
+
+.dark,
+[data-theme="forest"][data-mode="dark"] {
+  /* Soothing dark theme colors (HSL converted to Hex) */
+  --background: #04090b;
+  --foreground: #f9fafb;
+
+  --card: #04090b;
+  --card-foreground: #f9fafb;
+
+  --popover: #04090b;
+  --popover-foreground: #f9fafb;
+
+  /* Soft sage in dark mode */
+  --primary: #9cc9b2;
+  --primary-foreground: #183929;
+
+  /* Gentle purple in dark mode */
+  --secondary: #2c293d;
+  --secondary-foreground: #f9fafb;
+
+  /* Muted dark tones */
+  --muted: #0d1e26;
+  --muted-foreground: #a3b2c2;
+
+  /* Soft dark accent */
+  --accent: #0d1e26;
+  --accent-foreground: #f9fafb;
+
+  --destructive: #7c1d1d;
+  --destructive-foreground: #f9fafb;
+
+  --border: #0d1e26;
+  --input: #0d1e26;
+  --ring: #9cc9b2;
+
+  /* Sidebar Colors */
+  --sidebar: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+}
+
+/* Additional calming color palettes for mental peace */
+
+/* Forest Serenity Palette - Earthy greens and browns (now the default) */
+[data-theme="forest"] {
+  --background: #fcfdfd;
+  --foreground: #383f42;
+  --card: #fcfdfd;
+  --card-foreground: #383f42;
+  --popover: #fcfdfd;
+  --popover-foreground: #383f42;
+  --primary: #7ab899;
+  --primary-foreground: #183929;
+  --secondary: #f3f3f7;
+  --secondary-foreground: #474554;
+  --muted: #f3f5f7;
+  --muted-foreground: #607085;
+  --accent: #eff5f5;
+  --accent-foreground: #383f42;
+  --destructive: #ef4343;
+  --destructive-foreground: #f9fafb;
+  --border: #e3e6e8;
+  --input: #e3e6e8;
+  --ring: #7ab899;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #3f3f46;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
+}
+
+[data-theme="forest"][data-mode="dark"] {
+  --background: #04090b;
+  --foreground: #f9fafb;
+  --card: #04090b;
+  --card-foreground: #f9fafb;
+  --popover: #04090b;
+  --popover-foreground: #f9fafb;
+  --primary: #9cc9b2;
+  --primary-foreground: #183929;
+  --secondary: #2c293d;
+  --secondary-foreground: #f9fafb;
+  --muted: #0d1e26;
+  --muted-foreground: #a3b2c2;
+  --accent: #0d1e26;
+  --accent-foreground: #f9fafb;
+  --destructive: #7c1d1d;
+  --destructive-foreground: #f9fafb;
+  --border: #0d1e26;
+  --input: #0d1e26;
+  --ring: #9cc9b2;
+  --sidebar: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+}
+
+/* Ocean Breeze Palette - Soft blues and teals */
+[data-theme="ocean"] {
+  --background: #f0f9ff;
+  --foreground: #0f172a;
+  --card: #f0f9ff;
+  --card-foreground: #0f172a;
+  --popover: #f0f9ff;
+  --popover-foreground: #0f172a;
+  --primary: #38bdf8;
+  --primary-foreground: #082f49;
+  --secondary: #bae6fd;
+  --secondary-foreground: #0c4a6e;
+  --muted: #e0f2fe;
+  --muted-foreground: #0f172a;
+  --accent: #7dd3fc;
+  --accent-foreground: #082f49;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #bae6fd;
+  --input: #bae6fd;
+  --ring: #0ea5e9;
+  --sidebar: #e0f2fe;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0ea5e9;
+  --sidebar-primary-foreground: #f0f9ff;
+  --sidebar-accent: #bae6fd;
+  --sidebar-accent-foreground: #0c4a6e;
+  --sidebar-border: #7dd3fc;
+  --sidebar-ring: #0284c7;
+}
+
+[data-theme="ocean"][data-mode="dark"] {
+  --background: #0c1114;
+  --foreground: #f1f5f9;
+  --card: #0c1114;
+  --card-foreground: #f1f5f9;
+  --popover: #0c1114;
+  --popover-foreground: #f1f5f9;
+  --primary: #0ea5e9;
+  --primary-foreground: #082f49;
+  --secondary: #075985;
+  --secondary-foreground: #e0f2fe;
+  --muted: #0c4a6e;
+  --muted-foreground: #bae6fd;
+  --accent: #0c4a6e;
+  --accent-foreground: #e0f2fe;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+  --border: #0c4a6e;
+  --input: #0c4a6e;
+  --ring: #0ea5e9;
+  --sidebar: #0c2a3a;
+  --sidebar-foreground: #bae6fd;
+  --sidebar-primary: #0284c7;
+  --sidebar-primary-foreground: #f0f9ff;
+  --sidebar-accent: #0c4a6e;
+  --sidebar-accent-foreground: #bae6fd;
+  --sidebar-border: #0ea5e9;
+  --sidebar-ring: #0284c7;
+}
+
+/* Sunset Calm Palette - Warm oranges and pinks */
+[data-theme="sunset"] {
+  --background: #fff7ed;
+  --foreground: #0f172a;
+  --card: #fff7ed;
+  --card-foreground: #0f172a;
+  --popover: #fff7ed;
+  --popover-foreground: #0f172a;
+  --primary: #fb923c;
+  --primary-foreground: #431407;
+  --secondary: #fed7aa;
+  --secondary-foreground: #9a3412;
+  --muted: #ffedd5;
+  --muted-foreground: #0f172a;
+  --accent: #fdba74;
+  --accent-foreground: #9a3412;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #fed7aa;
+  --input: #fed7aa;
+  --ring: #f97316;
+  --sidebar: #ffedd5;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #ea580c;
+  --sidebar-primary-foreground: #fff7ed;
+  --sidebar-accent: #fed7aa;
+  --sidebar-accent-foreground: #9a3412;
+  --sidebar-border: #fdba74;
+  --sidebar-ring: #c2410c;
+}
+
+[data-theme="sunset"][data-mode="dark"] {
+  --background: #130c04;
+  --foreground: #fef7ec;
+  --card: #130c04;
+  --card-foreground: #fef7ec;
+  --popover: #130c04;
+  --popover-foreground: #fef7ec;
+  --primary: #f97316;
+  --primary-foreground: #431407;
+  --secondary: #9a3412;
+  --secondary-foreground: #ffedd5;
+  --muted: #7c2d12;
+  --muted-foreground: #fed7aa;
+  --accent: #7c2d12;
+  --accent-foreground: #fed7aa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+  --border: #7c2d12;
+  --input: #7c2d12;
+  --ring: #f97316;
+  --sidebar: #2c1608;
+  --sidebar-foreground: #fed7aa;
+  --sidebar-primary: #c2410c;
+  --sidebar-primary-foreground: #fff7ed;
+  --sidebar-accent: #9a3412;
+  --sidebar-accent-foreground: #fed7aa;
+  --sidebar-border: #f97316;
+  --sidebar-ring: #c2410c;
+}
+
+/* Lavender Dream Palette - Soft purples and lavenders */
+[data-theme="lavender"] {
+  --background: #faf5ff;
+  --foreground: #0f172a;
+  --card: #faf5ff;
+  --card-foreground: #0f172a;
+  --popover: #faf5ff;
+  --popover-foreground: #0f172a;
+  --primary: #c084fc;
+  --primary-foreground: #3b0764;
+  --secondary: #e9d5ff;
+  --secondary-foreground: #5b21b6;
+  --muted: #f3e8ff;
+  --muted-foreground: #0f172a;
+  --accent: #d8b4fe;
+  --accent-foreground: #5b21b6;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #e9d5ff;
+  --input: #e9d5ff;
+  --ring: #a855f7;
+  --sidebar: #f3e8ff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #9333ea;
+  --sidebar-primary-foreground: #faf5ff;
+  --sidebar-accent: #e9d5ff;
+  --sidebar-accent-foreground: #5b21b6;
+  --sidebar-border: #d8b4fe;
+  --sidebar-ring: #7e22ce;
+}
+
+[data-theme="lavender"][data-mode="dark"] {
+  --background: #110c18;
+  --foreground: #f3e8ff;
+  --card: #110c18;
+  --card-foreground: #f3e8ff;
+  --popover: #110c18;
+  --popover-foreground: #f3e8ff;
+  --primary: #a855f7;
+  --primary-foreground: #3b0764;
+  --secondary: #5b21b6;
+  --secondary-foreground: #f3e8ff;
+  --muted: #4c1d95;
+  --muted-foreground: #e9d5ff;
+  --accent: #4c1d95;
+  --accent-foreground: #e9d5ff;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+  --border: #4c1d95;
+  --input: #4c1d95;
+  --ring: #a855f7;
+  --sidebar: #1e1b4b;
+  --sidebar-foreground: #e9d5ff;
+  --sidebar-primary: #7e22ce;
+  --sidebar-primary-foreground: #faf5ff;
+  --sidebar-accent: #5b21b6;
+  --sidebar-accent-foreground: #e9d5ff;
+  --sidebar-border: #a855f7;
+  --sidebar-ring: #7e22ce;
+}
+
+/* Add subtle transitions */
+@layer base {
+  * {
+    @apply border-border transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Add some calming animations */
+.hover-lift {
+  @apply transition-transform duration-200 hover:-translate-y-1;
+}
+
+.gentle-shadow {
+  @apply shadow-lg shadow-primary/5;
+}
+
+/* Add after your existing styles */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes scroll {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-scroll {
+  animation: scroll 2s ease-in-out infinite;
+}
+
+/* Gradient animations */
+.gradient-animation {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add to your existing animations */
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+@layer utilities {
+  .bg-size-200 {
+    background-size: 200% 100%;
+  }
+
+  .bg-pos-0 {
+    background-position: 0% 0%;
+  }
+
+  .bg-pos-100 {
+    background-position: 100% 0%;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+
+  .gentle-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .gentle-shadow:hover {
+    box-shadow: 0 8px 30px -2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
