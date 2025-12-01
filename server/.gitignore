@@ -1,2 +1,30 @@
+# Environment variables
 .env*
+!.env.example
+
+# Dependencies
 node_modules
+
+# Logs
+*.log
+logs
+combined.log
+error.log
+
+# Build output (commented out - needed for Render deployment)
+# dist
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+.nyc_output

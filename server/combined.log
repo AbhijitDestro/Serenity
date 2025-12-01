@@ -84,3 +84,23 @@
 {"level":"info","message":"Found 20 total activities for user 69293742b1d04f9965567f8f","timestamp":"2025-11-29T03:44:08.603Z"}
 {"end":"2025-11-29T18:29:59.999Z","level":"info","message":"Fetching today's activities for user 69293742b1d04f9965567f8f","start":"2025-11-28T18:30:00.000Z","timestamp":"2025-11-29T03:44:08.689Z","userId":"69293742b1d04f9965567f8f"}
 {"activities":[{"name":"wddad","timestamp":"2025-11-29T03:43:28.628Z","type":"exercise"},{"name":"Mood Check-in","timestamp":"2025-11-29T03:43:19.629Z","type":"mood"},{"name":"Mood Check-in","timestamp":"2025-11-29T03:43:14.516Z","type":"mood"},{"name":"forest","timestamp":"2025-11-29T03:43:07.062Z","type":"game"},{"name":"breathing","timestamp":"2025-11-29T03:43:04.656Z","type":"game"}],"level":"info","message":"Found 5 activities for today","timestamp":"2025-11-29T03:44:08.742Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:26:36.019Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:26:36.022Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:28:18.876Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:28:18.879Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:30:13.437Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:30:13.440Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:30:31.433Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:30:31.436Z"}
+{"level":"error","message":"MongoDB connection error:","timestamp":"2025-12-01T16:30:41.501Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:34:11.769Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:34:11.772Z"}
+{"level":"error","message":"MongoDB connection error:","timestamp":"2025-12-01T16:34:21.858Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:47:31.174Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:47:31.177Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas","timestamp":"2025-12-01T16:47:31.190Z"}
+{"level":"info","message":"Connecting to MongoDB Atlas with URI:","timestamp":"2025-12-01T16:47:31.193Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-12-01T16:47:31.695Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-12-01T16:47:31.699Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-12-01T16:47:31.700Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-12-01T16:47:31.707Z"}

@@ -19,7 +19,13 @@ export const connectDB = async () => {
     const maskedUri = MONGODB_URI.replace(/(mongodb\+srv:\/\/)([^:]+):([^@]+)(@.*)/, "$1$2:****$4");
     logger.info("Connecting to MongoDB Atlas with URI:", maskedUri);
     
-    await mongoose.connect(MONGODB_URI);
+    // Add connection options for better error handling
+    await mongoose.connect(MONGODB_URI, {
+      serverSelectionTimeoutMS: 10000, // Timeout after 10 seconds
+      socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+      bufferCommands: false // Disable mongoose buffering
+    });
+    
     logger.info("Connected to MongoDB Atlas");
   } catch (error: any) {
     logger.error("MongoDB connection error:", error.message);
@@ -34,6 +40,7 @@ export const connectDB = async () => {
       logger.error("4. Your network connection is stable");
     }
     
+    // Exit the process to prevent hanging
     process.exit(1);
   }
 };
