@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-const API_URL = process.env.BACKEND_API_URL || "http://localhost:3001";
+const API_URL = process.env.BACKEND_API_URL || "https://serenity-backend-cdu2.onrender.com";
 
 export async function GET(
   req: NextRequest,

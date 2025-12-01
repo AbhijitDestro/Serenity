@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const API_URL = process.env.BACKEND_API_URL || "https://serenity-backend-cdu2.onrender.com";
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const API_URL = "http://localhost:3001";
 
   try {
     const res = await fetch(`${API_URL}/api/auth/register`, {
